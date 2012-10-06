@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<links>
+  <link>
+    <url>https://www.facebook.com/usf.edu</url>
+    <title>on Facebook</title>
+  </link>
+  <link>
+    <url>https://twitter.com/#!/USFNEWS</url>
+    <title>on Twitter</title>
+  </link>
+  <link>
+    <url>http://www.youtube.com/usfchannel</url>
+    <title>on Youtube</title>
+  </link>
+  <link>
+    <url>http://usflife.tumblr.com/</url>
+    <title>on Tumblr</title>
+  </link>
+  <link>
+    <url>http://www.linkedin.com/company/university-of-south-florida</url>
+    <title>on LinkedIn</title>
+  </link>
+  <link>
+    <url>https://foursquare.com/usfnews</url>
+    <title>on Foursquare</title>
+  </link>
+  <!-- <link isRSS="true">
+    <url>http://blogs.msdn.com/b/mainfeed.aspx?Type=BlogsOnly</url>
+    <title>MSDN News</title>
+  </link> -->
+</links>

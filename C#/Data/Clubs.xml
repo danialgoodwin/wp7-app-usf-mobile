@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<clubs>
+  <club>
+    <url>http://gousfbulls.com/</url>
+    <title>Go USF Bulls</title>
+    <subtitle>Official USF Sports</subtitle>
+  </club>
+  <club>
+    <url>http://msc.usf.edu/</url>
+    <title>Marshall Student Center</title>
+    <subtitle>Food, fellowship and fun</subtitle>
+  </club>
+  <club>
+    <url>http://involvement.usf.edu/orgs.htm</url>
+    <title>Involvement</title>
+    <subtitle>How to be a USF Bull</subtitle>
+  </club>
+  <club>
+    <url>http://usfweb2.usf.edu/CampusRec/</url>
+    <title>Recreation Center</title>
+    <subtitle>Bigger, better, stronger</subtitle>
+  </club>
+  <club>
+    <url>http://uls.usf.edu/</url>
+    <title>University Lecture Series</title>
+    <subtitle>Inspiring students through stories of success and empowerment.</subtitle>
+  </club>
+  <club>
+    <url>http://www.veterans.usf.edu/</url>
+    <title>Veteran Services</title>
+    <subtitle>#5 in the Nation for Best Colleges for Verterans</subtitle>
+  </club>
+  <club>
+    <url>http://usfweb2.usf.edu/parking_services/default.asp</url>
+    <title>Parking &amp; Transportation</title>
+    <subtitle>General information including permits and Bull Runner</subtitle>
+  </club>
+</clubs>
+

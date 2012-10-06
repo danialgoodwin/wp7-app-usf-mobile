@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<contacts>
+  <contact>
+    <name>Marshall Student Center</name>
+    <photoUrl>/Resources/Content/msc.jpg</photoUrl>
+    <email>ems@admin.usf.edu</email>
+    <phoneNumber>813.974.3180</phoneNumber>
+  </contact>
+  <contact>
+    <name>Admissions</name>
+    <photoUrl>/Resources/Content/admissions.jpg</photoUrl>
+    <email></email>
+    <phoneNumber>813.974.3350</phoneNumber>
+  </contact>
+  <contact>
+    <name>Library</name>
+    <photoUrl>/Resources/Content/library.jpg</photoUrl>
+    <email></email>
+    <phoneNumber>813.974.2729</phoneNumber>
+  </contact>
+  <contact>
+    <name>Financial Aid</name>
+    <photoUrl>/Resources/Content/money.jpg</photoUrl>
+    <email></email>
+    <phoneNumber>813.974.4700</phoneNumber>
+  </contact>
+  <contact>
+    <name>Career Center</name>
+    <photoUrl>/Resources/Content/cfa.JPG</photoUrl>
+    <email></email>
+    <phoneNumber>813.974.2171</phoneNumber>
+  </contact>
+  <contact>
+    <name>Graduate School</name>
+    <photoUrl>/Resources/Content/grad.JPG</photoUrl>
+    <email>usf-grad@grad.usf.edu</email>
+    <phoneNumber>813.974.2846</phoneNumber>
+  </contact>
+  <contact>
+    <name>USF Police Department</name>
+    <photoUrl>/Resources/Content/usfpd.JPG</photoUrl>
+    <email></email>
+    <phoneNumber>813.974.2628</phoneNumber>
+  </contact>
+</contacts>

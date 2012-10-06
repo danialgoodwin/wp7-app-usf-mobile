@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<links>
+  <link>
+    <url>http://gousfbulls.com/</url>
+    <title>Go USF Bulls</title>
+  </link>
+  <link>
+    <url>http://www.gousfbulls.com/liveEvents/liveEvents.dbml</url>
+    <title>Live Events</title>
+  </link>
+  <link>
+    <url>http://www.gousfbulls.com/main/CalendarSchedule.dbml?DB_OEM_ID=7700</url>
+    <title>Schedule</title>
+  </link>
+  <link>
+    <url>http://www.gousfbulls.com/ViewArticle.dbml?&amp;DB_OEM_ID=7700&amp;ATCLID=3756170</url>
+    <title>All Sports</title>
+  </link>
+</links>

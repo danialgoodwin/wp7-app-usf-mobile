@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Windows Phone Starter Kit for Schools</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Phone 7, Windows Phone, Windows Phone 7.1, Windows Phone Mango, Windows Phone SDK 7.1
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Starter Kit, Phone application development, Getting Started
+                        </div>
+                    </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">4/12/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Windows-Phone-Starter-Kit-c3b8b2d2">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><strong>UPDATE 2012-04-12: </strong>Fixed an issue with the localization defaults</p>
+<p><strong>UPDATE 2011-12-07: UPDATED TO VERSION 2.0</strong></p>
+<p>Thanks to some AWESOME help from Rudy Hyun, I was able to incorporate a bunch of new stuff into a new version of the Starter Kit.</p>
+<ul>
+<li>added localization support (fr and en included) </li><li>switched to Google Weather service (previous service was US only) </li><li>merged map panorama items </li><li>added a popup to select contact method on the contact pano (previous was hard to select)
+</li><li>added a campus view to navigate to the image (pinch/zoom/translate, etc) </li><li>improved the MVVM implementation </li><li>some refactoring of the data files and codebase </li><li>added club tab (item data &#43; subtitle - can be removed if unwanted) </li><li>various code and performance tweaks </li></ul>
+<p>The comments have been invaluable - thanks to everyone for posting. I will continue to try to respond as soon as possible to these requests. It would be helpful if you'd post any suggestions on the
+<a href="http://code.msdn.microsoft.com/Windows-Phone-Starter-Kit-c3b8b2d2/http://code.msdn.microsoft.com/Windows-Phone-Starter-Kit-c3b8b2d2/https://github.com/ChrisKoenig/Windows-Phone-Starter-Kit-for-Schools" >
+github site</a> to make it easier for me to track.</p>
+<p><strong>UPDATE 2011-11-29: Fixed a bug related to no network available.</strong></p>
+<p>The MySchoolApp project is built to allow you to update easily the content and the appearance to match your school. This document steps you through customizing the application. Specifically:</p>
+<ul>
+<li>Customize the settings and data </li><li>Customize the appearance and content </li></ul>
+<p>The source code for this starter kit is located on GitHub at the following location:</p>
+<p><a href="http://code.msdn.microsoft.com/Windows-Phone-Starter-Kit-c3b8b2d2/http://code.msdn.microsoft.com/Windows-Phone-Starter-Kit-c3b8b2d2/https://github.com/ChrisKoenig/Windows-Phone-Starter-Kit-for-Schools">http://code.msdn.microsoft.com/Windows-Phone-Starter-Kit-c3b8b2d2/http://code.msdn.microsoft.com/Windows-Phone-Starter-Kit-c3b8b2d2/https://github.com/ChrisKoenig/Windows-Phone-Starter-Kit-for-Schools</a></p>
+<p>If you are interested in contributing to the Windows Phone Starter Kit for Schools, please follow the instructions on GitHub for submitting a Pull Request found at
+<a href="http://help.github.com/send-pull-requests/">http://help.github.com/send-pull-requests/</a>.</p>
+<p>While you're here, please check out our other Starter Kits:</p>
+<ul>
+<li><a href="http://aka.ms/WPSKWordPress">Windows Phone Starter Kit for WordPress</a> - Turn your WordPress blog into a Windows Phone application!
+</li><li><a href="http://code.msdn.microsoft.com/Windows-Phone-Starter-Kit-620904d6">Windows Phone Starter Kit for Podcasts</a> - Turn your Podcast into a Windows Phone application!
+</li><li><a href="http://aka.ms/wpskrss">Windows Phone Starter Kit for RSS</a> - Application template for building RSS-based applications.
+</li></ul>
+<h1>Customize the settings and data</h1>
+<p>Customizing the dynamic content and data sources of the MySchoolApp is accomplished by updating the XML files found in the Data folder. The &ldquo;Settings.xml&rdquo; file contains multiple values used throughout the application and the remaining files correspond
+ directly to their respective section of the application.</p>
+<h2>Settings.xml</h2>
+<p>This XML file provides multiple values used throughout the application. The values of the individual nodes are used in the following manner.</p>
+<ul>
+<li>name &ndash; used as the title of the main and subpages. The value should be your school name.
+</li><li>themeColor1 &ndash; used as the color for the first colored band at the top of each page. The value is set using the hexadecimal format for a color (rrggbb). The value may be preceded by a &ldquo;#&rdquo; symbol for clarity. Optionally, a value for alpha
+ may be passed using the (aarrggbb) format. </li><li>themeColor2 &ndash; used as the color for the second colored band at the top of each page. The value is set the same as themeColor1.
+</li><li>newsUrl &ndash; used as the RSS feed url for the &ldquo;what&rsquo;s new&rdquo; section. The value should be set to an RSS feed containing recent school news.
+</li><li>bingMapsKey &ndash; used to request the static map on the MainPage and the dynamic map on the MapPage. BingMapsKeys are available at the Bing Maps Account Center. If a key is not supplied, a warning will be shown on the MainPage.
+</li><li>location(s) &ndash; values are used for the pin points that appear on the dynamic map on the MapPage. The latitude and longitude of the first location is used for both the static map on MainPage and the weather forecast.
+</li></ul>
+<h2>Contacts.xml</h2>
+<p>This XML file provides multiple values for the Contacts section on the MainPage. The vales of the individual nodes are used in the following manner.</p>
+<ul>
+<li>name &ndash; used as the title for the contact in the list </li><li>photoUrl &ndash; used as the photo for the contact in the list </li><li>email &ndash; opens a new email page when tapped </li><li>phoneNumber &ndash; opens a call prompt dialog when tapped </li></ul>
+<h2>Links.xml</h2>
+<p>This XML file provides multiple values for the Links section on the MainPage. The vales of the individual nodes are used in the following manner.</p>
+<ul>
+<li>title &ndash; used as the title for the contact in the list </li><li>url &ndash; opens a Browser window when tapped </li><li>isRSS &ndash; if this attribute is present on the link element, rather than opening a Browser window, a FeedPage will be opened. The url will then be requested and the results will be treated as an RSS feed. Feed items will be displayed in a list and when
+ tapped, a Browser window will open displaying the feed item url. </li></ul>
+<h2>Athletics.xml</h2>
+<p>This XML file is setup in the same way as the &ldquo;Links.xml&rdquo; and is used to support the &ldquo;athletics&rdquo; section on the MainPage.</p>
+<h1>Customize the appearance and content</h1>
+<p>Customizing the appearance and content of the MySchoolApp is accomplished by providing new graphics and using Visual Studio or Expression Blend.</p>
+<h2>Application Title</h2>
+<p>The title of your application that is displayed when it&rsquo;s installed on the Windows Phone can be changed by modifying the project properties. To open the properties editor select the Project &gt; MySchoolApp Properties option from the File menu. Change
+ the value of the &ldquo;Title&rdquo; fields found under &ldquo;Deployment options&rdquo; and &ldquo;Tile options&rdquo; to better represent your school name.</p>
+<h2>Application Icon</h2>
+<p>The &ldquo;/Application.png&rdquo; file is the image displayed next to the application in the installed apps list on the phone. This file must be 62x62 pixels and transparency is supported.</p>
+<h2>Pinned Application Icon</h2>
+<p>The &ldquo;/Background.png&rdquo; file is the image displayed when the application is pinned to the phone start screen. This file must be 173x173 pixels and transparency is supported.</p>
+<h2>Splash Screen Image</h2>
+<p>The &ldquo;/SplashScreenImage.jpg&rdquo; file is the image that fills the screen, while the application is loading. This file must be 480x800.</p>
+<h2>Top Color Bands</h2>
+<p>As previously discussed in the &ldquo;Settings.xml&rdquo; file section, the top two color bands are determined by the values given for the themeColor1 and themeColor2 elements.</p>
+<h2>School Logo</h2>
+<p>The &ldquo;/Resources/logo.jpg&rdquo; file is the image displayed in the upper left corner of the MainPage. This file should be at least 160x160 and is automatically clipped to fit within the circle area provided.</p>
+<h2>The Athletics section</h2>
+<p>The Athletics section could be easily repurposed by simply changing the Header property of the PanoramaItem currently set to &ldquo;athletics&rdquo; to another topic. The links in the &ldquo;Athletics.xml&rdquo; would then need to be updated to reflect the
+ new topic. As another alternative the Athletics section can be removed by completing the following steps:</p>
+<ul>
+<li>Delete the PanoramaItem with the Header property set to &ldquo;athletics&rdquo; in MainPage.xaml
+</li><li>Delete the following line in the resetListBoxes method of MainPage.xaml.cs </li></ul>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">athleticsListBox.SelectedIndex = -1;
+</pre>
+<div class="preview">
+<pre class="csharp">athleticsListBox.SelectedIndex&nbsp;=&nbsp;-<span class="cs__number">1</span>;&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"></div>
+<p>&nbsp;</p>
+<ul>
+<li>Delete the following line in the loadlinks method of MainViewModel.cs </li></ul>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">parseLinkFile(&quot;/Data/Athletics.xml&quot;).ForEach(x =&gt; AthleticLinks.Add(x)); </pre>
+<div class="preview">
+<pre class="csharp">parseLinkFile(<span class="cs__string">&quot;/Data/Athletics.xml&quot;</span>).ForEach(x&nbsp;=&gt;&nbsp;AthleticLinks.Add(x));&nbsp;</pre>
+</div>
+</div>
+</div>
+<h2 class="endscriptcode">The Campus Map section</h2>
+<p>&nbsp;</p>
+<p>This section can be used as an alternative to the &ldquo;map&rdquo; section in case a BingMapsKey is not available. The &ldquo;/Resources/campusmap.jpg&rdquo; file is the image displayed and should be sized be 376x376. The section can be easily removed by
+ deleting the PanoramaItem with the Header property set to &ldquo;campus map&rdquo; in the MainPage.xaml file.</p>
+<h1>Screen Shots</h1>
+<p><img src="description/page1.jpg" alt="" width="240" height="400">&nbsp;<img src="description/page2.jpg" alt="" width="240" height="400">&nbsp;<img src="description/page3.jpg" alt="" width="240" height="400">&nbsp;<img src="description/page4.jpg" alt="" width="240" height="400">&nbsp;<img src="description/page6.jpg" alt="" width="240" height="400">&nbsp;<img src="description/page7.jpg" alt="" width="240" height="400"></p>
+<h1>Special Thanks</h1>
+<p>Special shout out to Professior Mark Frydenberg, the original developer of the MySchoolApp on which this starter kit was based.</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

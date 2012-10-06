@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+  <name>university of south florida</name>
+  <themeColor1>#0A8224</themeColor1>
+  <themeColor2>#D2CE91</themeColor2>
+  <newsUrl>http://news.google.com/news?hl=en&amp;gl=us&amp;q=university+of+south+florida&amp;pws=0&amp;um=1&amp;ie=UTF-8&amp;output=rss</newsUrl>
+  
+  <!-- How to generate a Bing Maps key: http://msdn.microsoft.com/library/ff428642.aspx -->
+  <bingMapsKey>AmOxc7iZEynYjbq7e9-KXnK19rnOBhZ5mLfMkoZhXMuWs8icQEdvQ0EscjM_Oh_v</bingMapsKey>
+ 
+</settings>
